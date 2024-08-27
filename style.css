@@ -2,21 +2,15 @@
   margin: 0;
   padding: 0;
 }
-/* html,body{
-  overflow-x: hidden;
-} */
-section.active {
-  background-color: red;
-  transition: background-color 0.3s ease-in-out;
-}
 html,
 body {
   font-family: sans-serif;
   font-weight: 400;
   scroll-behavior: smooth !important;
+  /* overflow-x: hidden; */
 }
 #nav-bar {
-  position: sticky !important;
+  position: sticky;
   top: 0;
   z-index: 10;
 }
@@ -56,6 +50,8 @@ body {
 }
 #banner .user-image {
   border-radius: 50%;
+  width: 400px;
+  height: 400px;
 }
 #banner p {
   font-size: 40px;
@@ -65,7 +61,7 @@ body {
 #banner .bottom-img {
   width: 100%;
 }
-/*--------------about-us-------------*/
+/*--------------about-me-------------*/
 #about-me {
   background-color: #f8f9fa;
 }
@@ -114,6 +110,273 @@ body {
   font-weight: 600;
   color: #240046;
 }
+/*------------------------skills-section-------------------*/
+.lanSkills {
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
+  color: #240046;
+  padding: 10px 250px;
+}
+#skills{
+  overflow: hidden;
+}
+.skills {
+  display: flex;
+}
+#skills .container {
+  width: 600px;
+  height: 500px;
+  padding: 75px 90px;
+  margin-top: 50px;
+}
+
+#skills .heading {
+  color: #9d4edd;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 5px;
+  text-decoration-color: #3c096c;
+  margin-bottom: 50px;
+}
+
+#skills .bar {
+  font-size: 23px;
+}
+
+#skills .Technical-bars .bar {
+  margin: 40px 0;
+}
+
+#skills .Technical-bars .bar:first-child {
+  margin-top: 0;
+}
+
+#skills .Technical-bars .bar:last-child {
+  margin-bottom: 0;
+}
+
+#skills .Technical-bars .bar .info {
+  margin-bottom: 5px;
+}
+
+#skills .Technical-bars .bar .info span {
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+}
+
+#skills .Technical-bars .bar .progress-line {
+  position: relative;
+  border-radius: 10px;
+  width: 100%;
+  height: 5px;
+  background-color: #240046;
+}
+
+#skills .Technical-bars .bar .progress-line span {
+  height: 100%;
+  background-color: #9d4edd;
+  border-radius: 10px;
+  position: absolute;
+  width: 0;
+  transform-origin: left;
+}
+@keyframes widthAnimationHTML {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes widthAnimationCSS {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes widthAnimationJS {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 95%;
+  }
+}
+
+@keyframes widthAnimationPython {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+#skills .progress-line.html span {
+  animation: widthAnimationHTML 2s ease forwards;
+}
+
+#skills .progress-line.css span {
+  animation: widthAnimationCSS 2s ease forwards;
+}
+
+#skills .progress-line.javascript span {
+  animation: widthAnimationJS 2s ease forwards;
+}
+
+#skills .progress-line.python span {
+  animation: widthAnimationPython 2s ease forwards;
+}
+#skills .progress-line span::after {
+  position: absolute;
+  padding: 1px 8px;
+  background-color: #240046;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 3px;
+  top: -28px;
+  right: -20px;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
+
+#skills .progress-line.html span::after {
+  content: "100%";
+}
+
+#skills .progress-line.css span::after {
+  content: "100%";
+}
+
+#skills .progress-line.javascript span::after {
+  content: "95%";
+}
+
+#skills .progress-line.python span::after {
+  content: "100%";
+}
+
+#skills .progress-line span::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-color: #000;
+  top: -10px;
+  right: 0;
+  animation: showText 0.5s 1.5s linear forwards;
+  opacity: 0;
+}
+@keyframes showText {
+  100% {
+    opacity: 1;
+  }
+}
+.redial-bars {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.redial-bars .redial-bar {
+  width: 50%;
+  height: 170px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.redial-bars .redial-bar svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 120px;
+  height: 160px;
+}
+.redial-bars .redial-bar .progress-bar {
+  stroke-width: 7;
+  stroke: #240046;
+  fill: transparent;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke-linecap: round;
+  animation: animate-bar 1s linear forwards;
+}
+@keyframes animate-bar {
+  100% {
+    stroke-dashoffset: -1;
+  }
+}
+.path {
+  stroke-width: 10;
+  stroke: #9d4edd;
+  fill: transparent;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke-linecap: round;
+}
+.path-1 {
+  animation: animate-path1 1s 1s linear forwards;
+}
+.path-2 {
+  animation: animate-path2 1s 1s linear forwards;
+}
+.path-3 {
+  animation: animate-path3 1s 1s linear forwards;
+}
+.path-4 {
+  animation: animate-path4 1s 1s linear forwards;
+}
+@keyframes animate-path1 {
+  100% {
+    stroke-dashoffset: 50;
+  }
+}
+@keyframes animate-path2 {
+  100% {
+    stroke-dashoffset: 75;
+  }
+}
+@keyframes animate-path3 {
+  100% {
+    stroke-dashoffset: 30;
+  }
+}
+@keyframes animate-path4 {
+  100% {
+    stroke-dashoffset: 125;
+  }
+}
+.redial-bar .percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
+#skills .redial-bar .text {
+  color: #000;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  font-size: 17px;
+  font-weight: 500;
+  animation: showText 0.5s 1s linear forwards;
+  opacity: 0;
+}
 /*--------------project section----------------*/
 #projects {
   margin: 100px 0;
@@ -155,4 +418,25 @@ body {
 }
 #footer a:hover img {
   transform: translateY(-20px);
+}
+/*-----------------media--------------------------*/
+@media (max-width: 768px){
+  .lanSkills{
+    padding: 0;
+  }
+  .skills{
+    display: inline !important;
+  }
+  #skills .heading{
+    margin-left: -40%;
+  }
+  #skills .Technical-bars{
+    margin-left: -50px;
+  }
+  #skills .Technical-bars .bar .progress-line{
+    width: 70%;
+  }
+  .redial-bars{
+    width: 70%;
+  }
 }
